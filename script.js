@@ -1,13 +1,16 @@
-function textToAudio( ) {
-  let msg = document.getElementById('text').value;
+btn = document.getElementById('btn');
+btn.addEventListener('click', textToAudio);
 
-  let speech = new SpeechSynthesisUtterance();
-  speech.lang = "en-US";
+function textToAudio() {
+	let msg = document.getElementById('text').value;
 
-  speech.text = msg;
-  speech.volume = 1;
-  speech.rate = 1;
-  speech.pitch = 1;
+	let speech = new SpeechSynthesisUtterance();
+	speech.lang = 'en-US';
 
-  window.speechSynthesis.speak(speech);
+	speech.text = msg;
+	speech.volume = 1;
+	speech.rate = 1;
+	speech.pitch = 1;
+
+	window.speechSynthesis.speak(speech);
 }
